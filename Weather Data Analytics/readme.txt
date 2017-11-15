@@ -1,3 +1,6 @@
+Main.ipynb is the main file for the project.
+This project is built on numpy and matplotlib.
+
 PROJECT GOALS:
 
 1. Load NOAA Station and temperature data from text files.
