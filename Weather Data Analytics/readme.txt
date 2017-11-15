@@ -1,3 +1,24 @@
+PROJECT GOALS:
+
+1. Load NOAA Station and temperature data from text files.
+2. Integrate, smooth and plot data.
+3. Compute Daily Records.
+4. Comparing warmest year of a cold location with the coldest year of warmest location.
+
+OBJECTIVES:
+Loading Data:
+	Downloading a file over ftp.
+	Parsing a space seperated text file into Python Dictionary
+Temperature Analysis:
+	Parsing a fixed-field text file using np.genfromtext
+	Using ranges of Numpy date time object
+Integrating missing data:
+	Using Numpy Boolean mask indexing
+	Interpolating one-dimensional arrays with Numpy.interpret
+Smoothing Data:
+	Smoothing data with a running mean.
+	Showing subplots together with matplotlib
+
 README FILE FOR DAILY GLOBAL HISTORICAL CLIMATOLOGY NETWORK (GHCN-DAILY) 
 Version 3.21
 
@@ -20,35 +41,14 @@ Daily (GHCN-Daily), Version 3. [indicate subset used following decimal,
 e.g. Version 3.12]. 
 NOAA National Climatic Data Center. http://doi.org/10.7289/V5D21VHZ [access date].
 --------------------------------------------------------------------------------
-
-I. DOWNLOAD QUICK START
-
-Start by downloading "ghcnd-stations.txt," which has metadata for all stations.
-
-Then download one of the following TAR files:
-
-  - "ghcnd-all.tar.gz" if you want all of GHCN-Daily, OR
-  - "ghcnd-gsn.tar.gz" if you only want the GCOS Surface Network (GSN), OR
-  - "ghcnd-hcn.tar.gz" if you only want the U.S. Historical Climatology Network 
-    (U.S. HCN).
-
-Then uncompress and untar the contents of the tar file, 
-e.g., by using the following Linux command:
-
-tar xzvf ghcnd_xxx.tar.gz
-
-Where "xxx" stands for "all", "hcn", or "gsn" as applicable. The files will be 
-extracted into a subdirectory under the directory where the command is issued.
-
-ALTERNATIVELY, if you only need data for one station:
-
-  - Find the station's name in "ghcnd-stations.txt" and note its station
+ - We will be dealing only with GCOS.
+ 
+ - Find the station's name in "ghcnd-stations.txt" and note its station
     identification code (e.g., PHOENIX AP (Airport) is "USW00023183"); and
-  - Download the data file (i.e., ".dly" file) that corresponds to this code
+ - Download the data file (i.e., ".dly" file) that corresponds to this code
     (e.g., "USW00023183.dly" has the data for PHOENIX AP).  
     Note that the ".dly" file is located in the "all" subdirectory.
 
---------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 II. CONTENTS OF ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily
@@ -556,4 +556,4 @@ Data and metadata available at http://eca.knmi.nl
 
 
 
-For additional information, please send an e-mail to ncdc.ghcnd@noaa.gov.
+
